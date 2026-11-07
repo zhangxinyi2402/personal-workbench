@@ -252,6 +252,31 @@ html[data-theme=dark] .p187-card .p187-progress span{background:var(--gold)}html
 @media(max-width:760px){html[data-mobile-columns="2"] .p163-module .weekly-list-item{display:block}html[data-mobile-columns="2"] .p163-module .weekly-list-item>small{display:block;width:auto;padding:0;margin:5px 0 2px}html[data-mobile-columns="2"] .p163-module .weekly-list-item>.task{width:100%;margin-top:0}html[data-mobile-columns="2"] .p163-module .task .p16-metadata{display:none}html[data-mobile-columns="2"] .p163-module .task-folded{display:grid;grid-template-columns:18px minmax(0,1fr) 18px;gap:4px}html[data-mobile-columns="2"] .p163-module .task-folded .complete-check{width:18px;height:18px;min-height:18px}html[data-mobile-columns="2"] .p163-module .task-folded .task-title{min-width:0;width:100%;font-size:12px;line-height:1.5;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}html[data-mobile-columns="2"] .p163-module .task-folded .expand-arrow{padding:0;min-width:18px}html[data-mobile-columns="2"] .p163-module .module-heading h2{font-size:16px;line-height:1.4}html[data-mobile-columns="2"] .p163-module .module-heading .text-button{font-size:10px}}
 @media(max-width:820px){.p20-mobile-titles{display:flex;flex-direction:column;min-width:0;flex:1;gap:1px}.p20-mobile-titles #p20MobilePageTitle{font-size:17px;font-weight:600;line-height:23px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.p20-mobile-titles #mobileBrand{font-size:10px;line-height:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.8}}
 
+
+/* Phase 2.0.1: one existing preference, explicit mobile control and two-row section tools. */
+.p201-mobile-layout{display:none}.p201-short{display:none}
+@media(max-width:760px){
+.p201-mobile-layout{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;margin-bottom:10px;border:1px solid var(--border);border-radius:9px;background:var(--surface);font-size:12px;min-width:0}.p201-mobile-layout .segmented{display:flex;min-width:0}.p201-mobile-layout button{font-size:12px;min-height:36px;padding:4px 9px;white-space:nowrap}.p201-mobile-layout small{display:block;font-size:10px;color:var(--text-muted)}
+html[data-mobile-columns="2"] .p163-dense.page-grid,html[data-mobile-columns="2"] .p163-lines.mainline-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+html[data-mobile-columns="2"] .p163-dense>.p163-module.layout-module,html[data-mobile-columns="2"] .p163-lines.mainline-grid>.p187-card.p163-line-card{grid-column:span 1!important;min-width:0;max-width:100%}
+html[data-mobile-columns="2"] .p163-dense>.module-weeklyCalendar.layout-module,html[data-mobile-columns="2"] .p163-dense>.module-annualGoals.layout-module,html[data-mobile-columns="2"] .p163-dense>.module-schedule.layout-module,html[data-mobile-columns="2"] .p163-dense>.layout-module:has(.p13-card[data-p13-state=editing]){grid-column:1/-1!important}
+.p20-section-toolbar{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:36px 36px;gap:8px 4px;padding:10px;align-items:center}
+.p20-section-main,.p20-section-tools{display:contents}
+.p20-section-main h2{grid-row:1;grid-column:1/7;font-size:15px;line-height:24px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.p20-section-main>.p20-add-line{grid-row:1;grid-column:7/10;justify-self:end}
+.p20-section-tools>.p20-section-add{grid-row:1;grid-column:10/13;justify-self:end;min-width:0}
+.p20-section-main>.p20-add-line,.p20-section-add button{height:36px;min-height:36px!important;padding:3px 4px!important;font-size:12px!important;white-space:nowrap;width:58px;min-width:0}
+.p20-section-tools>.p181-sort-controls{grid-row:2;grid-column:1/5;display:flex;gap:3px;min-width:0}
+.p20-section-tools .p181-sort-controls label{order:0;display:block;font-size:0;min-width:0;flex:1}
+.p20-section-tools .p181-sort-controls select{width:100%;min-width:0;max-width:100%;height:36px;min-height:36px;padding:3px 2px;font-size:12px}
+.p20-section-tools .p181-sort-controls button{order:1;width:28px;min-width:28px;flex:none;height:36px;min-height:36px;padding:2px}
+.p20-section-tools>.p20-completed{grid-row:2;grid-column:5/7;display:flex;align-items:center;justify-content:center;margin:0;gap:2px;font-size:11px;min-width:0;height:36px}
+.p20-completed input{width:14px;height:14px;margin:0;flex:none}
+.p20-section-tabs{grid-row:2;grid-column:7/13;display:flex;margin:0;padding:2px;gap:0;width:100%;height:36px;min-width:0;align-items:center}
+.p20-section-tabs button{padding:2px 3px;min-width:0;min-height:30px;height:30px;font-size:11px;flex:1;line-height:20px;white-space:nowrap}
+.p20-section-toolbar .p201-wide{display:none}.p20-section-toolbar .p201-short{display:inline}
+}
+
 </style></head><body><div id="workspaceBackground" class="workspace-background" aria-hidden="true" hidden></div><div id="workspaceOverlay" class="workspace-overlay" aria-hidden="true" hidden></div><div class="workspace-application" id="workspaceApplication"><aside><div class="brand" id="brand">我的个人工作台</div><nav id="nav" aria-label="主导航"></nav><footer><span id="save" role="status">正在读取</span><span id="demoStatus"></span>本地工作台</footer></aside><div class="p20-mobile-bar"><button type="button" id="p20DrawerOpen" data-action="p20-drawer-open" aria-label="打开导航" aria-controls="mobileMenu" aria-expanded="false">☰</button><div class="p20-mobile-titles"><span id="p20MobilePageTitle">总览</span><span id="mobileBrand">我的个人工作台</span></div></div><div id="p20DrawerBackdrop" class="p20-drawer-backdrop" data-action="p20-drawer-close" aria-hidden="true" hidden></div><section id="mobileMenu" class="p20-drawer" role="dialog" aria-modal="true" aria-labelledby="p20DrawerTitle" hidden><header><h2 id="p20DrawerTitle">工作台导航</h2><button type="button" id="p20DrawerClose" data-action="p20-drawer-close" aria-label="关闭导航">×</button></header><nav id="mobileNav" aria-label="手机主导航"></nav><footer>本地工作台</footer></section><main><header class="workspace-toolbar"><div id="date"></div><div class="top-actions"><button type="button" id="layoutButton" data-action="edit-layout">编辑布局</button><button type="button" class="primary" id="quickButton" data-action="add-task">＋ 快速添加</button></div></header><section id="editor" hidden aria-labelledby="dialogTitle"><div id="dialogHeader"><h2 id="dialogTitle"></h2><button type="button" data-action="close-dialog" aria-label="关闭编辑">×</button></div><div id="dialogBody"></div></section><div id="content"></div></main><div id="toast" role="status" hidden></div><input id="restoreFile" type="file" accept="application/json,.json" hidden><noscript>请允许 JavaScript，以使用离线工作台。</noscript></div><script>/* Phase 1: normalized data, migration and projections. No UI dependencies. */
 'use strict';
 const APP_RELEASE='V1.0';
@@ -931,6 +956,13 @@ window.addEventListener('resize',()=>{if(innerWidth>820)p20CloseDrawer()});
 const p20SectionOptions=sectionOptions;sectionOptions=function(id){const html=p20SectionOptions(id),s=data.sections.find(s=>s.id===id&&s.systemRole==='habit');return s&&!html.includes(`value="${s.id}"`)?html+`<option value="${s.id}" selected>${esc(s.name)}（已归档）</option>`:html};
 
 const p20Editor=p13EditorHTML;p13EditorHTML=function(session){return p20Editor(session).replace('class="p13-task-form"','class="p13-task-form p20-task-editor"')};
+
+
+function p201Label(long,short){return `<span class="p201-wide">${long}</span><span class="p201-short">${short}</span>`}
+const p201Section=p162Section;p162Section=function(id){let h=p201Section(id);const section=data.sections.find(s=>s.id===id);if(!section||W.isHabitSection(data,section))return h;h=h.replace('>显示已完成</label>',`>${p201Label('显示已完成','完成')}</label>`);h=h.replace('＋ 添加任务</button>',p201Label('＋ 添加任务','＋ 任务')+'</button>').replace('＋ 添加主线</button>',p201Label('＋ 添加主线','＋ 主线')+'</button>');h=h.replace('>所有任务</button>',`>${p201Label('所有任务','所有')}</button>`).replace('>已过期</button>',`>${p201Label('已过期','过期')}</button>`);h=h.replace('>每日时间</option>','>时间</option>').replace('>创建时间</option>','>创建</option>');h=h.replace(/>顺延至今天(?:（\d+）)?<\/button>/,`>${p201Label('顺延至今天','顺延')}</button>`);return h};
+function p201ColumnsControl(){const n=data.settings.mobileColumns||1;return `<div class="p201-mobile-layout" role="group" aria-label="手机卡片列数"><div>手机卡片<small>日程、周课表、九宫格整行</small></div><div class="segmented">${[1,2].map(v=>`<button type="button" data-action="p201-columns" data-columns="${v}" aria-pressed="${n===v}" class="${n===v?'selected':''}">每行 ${v} 张</button>`).join('')}</div></div>`}
+const p201Render=render;render=function(){p201Render();if(['dashboard','today','week','annual','mainlines'].includes(view))$('content').insertAdjacentHTML('afterbegin',p201ColumnsControl())};
+window.addEventListener('click',e=>{const b=e.target.closest('[data-action="p201-columns"]');if(!b)return;e.preventDefault();e.stopImmediatePropagation();try{p11Transaction(next=>next.settings.mobileColumns=Number(b.dataset.columns));render()}catch(err){notify(err.message)}},true);
 
 if(!loadError)persist();else $('save').textContent='原数据受保护';render();
 
